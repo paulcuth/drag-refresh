@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+
+		<style>
+		
+			body {
+				margin: 0;
+				padding: 0;
+				font-family: Georgia;
+			}
+			
+			h1 {
+				background-color: #229;
+				color: #eee;
+				height: 50px;
+				line-height: 50px;
+				margin: 0;
+				text-align: center;
+			}
+			
+
+			#time {
+				background-color: #fff;
+				padding: 8px 4px;
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+		<h1>My app</h1>
+		<div id="time"></div>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script src="./jquery.dragRefresh.js"></script>
+		
+		<script>
+
+			(function () {
+				
+				function handleResize () {
+					var height = (window.innerHeight? window.innerHeight : $(window).height ());
+					$('#time').css ('min-height', height - 50 + 'px');
+				}
+
+
+				function updateContent () {
+					$('#time').html (new Date ().toString ());
+				}
+
+
+				$(function () {
+					updateContent ();
+					
+					$(window).resize (handleResize);
+					handleResize ();
+					
+					$('#time').dragRefresh (updateContent);
+				});
+	
+			})();
+			
+		</script>
+	</body>
+</html>
