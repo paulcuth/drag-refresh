@@ -11,6 +11,7 @@
 			divideBorder = config.divideBorder || '1px dotted #b7b7b7',
 			
 			$outer = $('<div>').addClass ('drag-refresh-outer').css ({
+				backgroundColor: backgroundColor,
 				overflow: 'hidden',
 				height: this.css ('height'),
 				minHeight: this.css ('min-height')
