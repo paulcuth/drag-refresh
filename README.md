@@ -1,20 +1,20 @@
 # $.dragRefresh 
 
-$.dragRefresh is a jQuery plugin to use in your web app to simplify the drag-down-to-refresh idiom. 
+$.dragRefresh is a jQuery plugin for use in your web app to simplify the drag-down-to-refresh idiom. 
 
 ## How to use
 
-Apply to the container to refresh and pass in the refresh callback:
+Apply to a container that you'd like to refresh and pass in the refresh callback:
 
 ```js
-function readMail () {
+function checkMail () {
 	//...
 }
 
-$('#inbox').dragRefresh (readMail);
+$('#inbox').dragRefresh (checkMail);
 ```
 
-The second optional parameter can be used to customise the plugin. To do this pass in an object with any of the following fields:
+The second, optional, parameter can be used to customise the plugin. To do this, pass in an object with any of the following fields:
 
 * dragText - Text to be used as the drag instruction (Default: '&#8595 Drag down to refresh.')
 * releaseText - Text to be used a the release instruction (Default: '&#8593; Release to refresh.')
@@ -35,7 +35,7 @@ $('#inbox').dragRefresh (readMail, {
 
 (The MIT License)
 
-Copyright (c) 2011 Paul Cuthbertson &lt;dragRefresh@paulcuth.me.uk&gt;
+Copyright (c) 2011 Paul Cuthbertson &lt;github@paulcuth.me.uk&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
